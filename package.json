@@ -12,7 +12,8 @@
   "dependencies": {
     "@tauri-apps/api": "^1.4.0",
     "openai": "^3.3.0",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vuetify": "^3.3.11"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.4.0",

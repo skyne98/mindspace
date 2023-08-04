@@ -17,12 +17,18 @@ console.log("openai_api_key: " + openai_api_key);
 const configuration = new Configuration({ apiKey: openai_api_key });
 delete configuration.baseOptions.headers['User-Agent'];
 
-// Make an embedding
+// Make a client
 const openai = new OpenAIApi(configuration);
-const embedding = await openai.createEmbedding({
-    model: "text-embedding-ada-002",
-    input: ["Hello, my name is"],
-});
-console.log("embedding: " + JSON.stringify(embedding));
 
-createApp(App).mount("#app");
+// Vuetify
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
+const vuetify = createVuetify({
+    components,
+    directives,
+})
+
+createApp(App, { openai }).use(vuetify).mount("#app");
